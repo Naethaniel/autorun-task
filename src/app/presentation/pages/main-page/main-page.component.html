@@ -1,0 +1,14 @@
+<div class="item-grid" *ngIf="!(loading$ | async); else loader">
+  <mat-card *ngFor="let post of posts$ | async" class="item-card" (click)="navigateToDetails(post.id)">
+    <mat-card-title>{{ post.id }}</mat-card-title>
+    <mat-card-content><p>{{ post.title }}</p></mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/details/{{ post.id }}" attr.aria-label="View details for {{ post.id }}">Details</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+<ng-template #loader>
+  <app-skeleton></app-skeleton>
+</ng-template>

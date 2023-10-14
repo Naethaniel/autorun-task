@@ -1,0 +1,25 @@
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .item-card {
+    min-height: 150px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 600px) {
+    /* Add styling for small screens here */
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Add styling for medium screens here */
+  }
+  
+  @media screen and (min-width: 1025px) {
+    /* Add styling for large screens here */
+  }

@@ -1,0 +1,17 @@
+<div class="details-container">
+  <ng-container *ngIf="!(isPostLoading$ | async); else loader">
+    <mat-card *ngIf="post$ | async as post" class="details-content">
+      <mat-card-title>{{ post.id }}</mat-card-title>
+      <mat-card-content>
+        <span>TITLE:</span>
+        <p>{{ post.title }}</p>
+        <span>BODY:</span>
+        <p>{{ post.body }}</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+  <ng-template #loader>
+    <app-skeleton [count]="1"></app-skeleton>
+  </ng-template>
+</div>
